@@ -21,7 +21,6 @@ A clean, multi-page website for a coffee shop concept built with pure HTML5 and 
 ## 📁 Project Structure
 
 ```text
-BrewCrew_Coffee/
 ├── css/
 │   └── style.css
 ├── images/
