@@ -1,16 +1,16 @@
-# ☕ BrewCrew Coffee
+# BrewCrew Coffee
 
 A clean, multi-page website for a coffee shop concept built with pure HTML5 and custom CSS3. Developed as **Assignment #1** for the **Web Technologies 1** course at Astana IT University.
 
 ---
 
-## 👥 Authors
+## Authors
 * **Nurali Kalmakhanbet** — Home (`index.html`), About Us (`about.html`)
 * **Zhumak Zhalgas** — Menu (`menu.html`), Contact (`contact.html`)
 
 ---
 
-## 🛠️ Tech Stack & Features
+## Tech Stack & Features
 * **Pure HTML5 & CSS3:** Clean, semantic markup without any frameworks (Bootstrap/Tailwind) or JavaScript[cite: 1].
 * **Core Components:** Custom navigation menu, interactive contact form, price table, and profile cards[cite: 1].
 * **CSS Selectors:** Implements element, class, ID, and descendant selectors[cite: 1].
@@ -18,7 +18,7 @@ A clean, multi-page website for a coffee shop concept built with pure HTML5 and 
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 ├── css/
