@@ -9,27 +9,27 @@ body {
     color: #3b2a20;
     line-height: 1.6;
 }
-
+ 
 h1, h2, h3 {
     font-family: Georgia, 'Times New Roman', serif;
     color: #3b2a20;
 }
-
+ 
 h1 {
     font-size: 2rem;
     text-align: center;
 }
-
+ 
 h2 {
     font-size: 1.4rem;
     border-bottom: 2px solid #c77d3b;
     padding-bottom: 8px;
 }
-
+ 
 p {
     max-width: 75ch;
 }
-
+ 
 img {
     max-width: 100%;
     height: auto;
@@ -37,23 +37,23 @@ img {
     display: block;
     margin: 0 auto;
 }
-
+ 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
 }
-
+ 
 a {
     color: #c77d3b;
     text-decoration: none;
 }
-
+ 
 a:hover {
     color: #6b7a52;
     text-decoration: underline;
 }
-
+ 
 /* ==========================================================================
    2. CLASS SELECTORS
    ========================================================================== */
@@ -62,14 +62,14 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
 }
-
+ 
 .logo {
     font-family: Georgia, serif;
     font-size: 1.6rem;
     font-weight: bold;
     color: #f7f1e8;
 }
-
+ 
 .card {
     background-color: #ffffff;
     border: 1px solid #e3d9c9;
@@ -77,12 +77,12 @@ a:hover {
     padding: 24px;
     margin: 24px 5vw;
 }
-
+ 
 .hero {
     text-align: center;
     padding: 20px 5vw;
 }
-
+ 
 .profile-card {
     display: flex;
     align-items: center;
@@ -93,7 +93,7 @@ a:hover {
     padding: 20px;
     margin: 24px 5vw;
 }
-
+ 
 .profile-img {
     width: 120px;
     height: 120px;
@@ -101,12 +101,12 @@ a:hover {
     object-fit: cover;
     flex-shrink: 0;
 }
-
+ 
 .active {
     text-decoration: underline;
     font-weight: bold;
 }
-
+ 
 /* ==========================================================================
    3. ID SELECTORS
    ========================================================================== */
@@ -114,10 +114,12 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
     background-color: #3b2a20;
     padding: 16px 5vw;
 }
-
+ 
 #site-footer {
     background-color: #3b2a20;
     color: #f7f1e8;
@@ -125,17 +127,17 @@ a:hover {
     padding: 24px 16px;
     margin-top: 40px;
 }
-
+ 
 #contact-form {
     display: flex;
     flex-direction: column;
     max-width: 500px;
 }
-
+ 
 #menu-table {
     width: 100%;
 }
-
+ 
 /* ==========================================================================
    4. DESCENDANT SELECTORS
    ========================================================================== */
@@ -145,46 +147,47 @@ a:hover {
     gap: 24px;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
 }
-
+ 
 .nav-menu a {
     color: #f7f1e8;
     font-weight: bold;
     padding: 8px 4px;
 }
-
+ 
 .nav-menu a:hover {
     color: #c77d3b;
     text-decoration: none;
     border-bottom: 2px solid #c77d3b;
 }
-
+ 
 #menu-table th {
     background-color: #6f4e37;
     color: #ffffff;
     padding: 12px;
     text-align: left;
 }
-
+ 
 #menu-table td {
     border: 1px solid #e3d9c9;
     padding: 10px 14px;
 }
-
+ 
 #menu-table tbody tr:nth-child(even) {
     background-color: #fbf6ef;
 }
-
+ 
 #site-footer p {
     margin: 4px 0;
 }
-
+ 
 #contact-form label {
     margin-top: 14px;
     margin-bottom: 4px;
     font-weight: bold;
 }
-
+ 
 #contact-form input,
 #contact-form select,
 #contact-form textarea {
@@ -195,7 +198,7 @@ a:hover {
     font-size: 1rem;
     background-color: #fbf6ef;
 }
-
+ 
 #contact-form input:focus,
 #contact-form select:focus,
 #contact-form textarea:focus {
@@ -203,7 +206,7 @@ a:hover {
     border-color: #c77d3b;
     background-color: #ffffff;
 }
-
+ 
 #contact-form button {
     margin-top: 20px;
     padding: 12px 20px;
@@ -216,7 +219,186 @@ a:hover {
     cursor: pointer;
     width: fit-content;
 }
-
+ 
 #contact-form button:hover {
     background-color: #6b7a52;
+}
+ 
+/* ==========================================================================
+   5. FLEXBOX CARD ROW
+   ========================================================================== */
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 24px 5vw;
+}
+ 
+.feature-card {
+    background-color: #ffffff;
+    border: 1px solid #e3d9c9;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1 1 250px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 18px rgba(59, 42, 32, 0.2);
+}
+ 
+.feature-card img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+ 
+.feature-card h3 {
+    margin: 0 0 8px 0;
+}
+ 
+.feature-card p {
+    flex-grow: 1;
+}
+ 
+.feature-card button {
+    margin-top: 12px;
+    padding: 10px 16px;
+    background-color: #c77d3b;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-start;
+}
+ 
+.feature-card button:hover {
+    background-color: #6b7a52;
+}
+ 
+/* ==========================================================================
+   6. GRID PAGE LAYOUT
+   ========================================================================== */
+.page-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    min-height: 100vh;
+}
+ 
+.page-grid > header {
+    grid-area: header;
+}
+ 
+.page-grid > .sidebar {
+    grid-area: sidebar;
+}
+ 
+.page-grid > main {
+    grid-area: main;
+}
+ 
+.page-grid > footer {
+    grid-area: footer;
+}
+ 
+.sidebar {
+    background-color: #ffffff;
+    border-right: 1px solid #e3d9c9;
+    padding: 20px;
+}
+ 
+.sidebar h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #c77d3b;
+    padding-bottom: 6px;
+}
+ 
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+ 
+.sidebar li {
+    margin-bottom: 8px;
+}
+ 
+@media (max-width: 700px) {
+    .page-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+ 
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #e3d9c9;
+    }
+}
+ 
+/* ==========================================================================
+   7. IMAGE GALLERY GRID
+   ========================================================================== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(59, 42, 32, 0.85);
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 8px;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

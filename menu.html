@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Page Author: Zhumak Zhalgas | Group: SE-2506 | Course: Web Technologies 1 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrewCrew Coffee - Menu</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<div class="page-grid">
 
     <header id="main-header">
         <div class="logo">BrewCrew</div>
@@ -21,6 +22,19 @@
         </nav>
     </header>
 
+    <aside class="sidebar">
+        <h3>Menu Categories</h3>
+        <ul>
+            <li>Coffee Beverages</li>
+            <li>Organic Teas</li>
+            <li>Fresh Bakery</li>
+        </ul>
+        <h3>Daily Discount</h3>
+        <ul>
+            <li>15% off for Students</li>
+        </ul>
+    </aside>
+
     <main>
         <h1>Our Menu</h1>
         <img src="images/menu-hero.jpg" alt="Photo of fresh coffee and bakery items">
@@ -32,6 +46,30 @@
                 <li>Freshly Baked Cinnamon Roll</li>
                 <li>Honey Iced Green Matcha</li>
             </ul>
+        </section>
+
+        <section>
+            <h2 class="text-center">Popular Combo Offers</h2>
+            <div class="card-row">
+                <div class="feature-card">
+                    <img src="images/espresso Shot.webp" alt="Espresso Combo">
+                    <h3>Morning Energizer</h3>
+                    <p>Rich espresso shot served with a flaky butter croissant.</p>
+                    <button type="button">Order Combo</button>
+                </div>
+                <div class="feature-card">
+                    <img src="images/Green Tea.webp" alt="Tea Combo">
+                    <h3>Afternoon Relax</h3>
+                    <p>Steamed green tea paired with a New York style cheesecake slice.</p>
+                    <button type="button">Order Combo</button>
+                </div>
+                <div class="feature-card">
+                    <img src="images/Caramel Latte.webp" alt="Latte Combo">
+                    <h3>Sweet Delight</h3>
+                    <p>Iced caramel latte paired with a warm cinnamon roll.</p>
+                    <button type="button">Order Combo</button>
+                </div>
+            </div>
         </section>
 
         <section class="card">
@@ -79,12 +117,56 @@
                 </tbody>
             </table>
         </section>
+
+        <section class="card">
+            <h2>Photo Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="images/espresso Shot.webp" alt="Espresso shot">
+                    <div class="gallery-caption">Espresso</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Cappuccino.webp" alt="Cappuccino with foam art">
+                    <div class="gallery-caption">Cappuccino</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Green Tea.webp" alt="Green tea cup">
+                    <div class="gallery-caption">Green Tea</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Croissant.webp" alt="Fresh croissant">
+                    <div class="gallery-caption">Croissant</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Cheesecake.webp" alt="Cheesecake slice">
+                    <div class="gallery-caption">Cheesecake</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Caramel Latte.webp" alt="Caramel latte">
+                    <div class="gallery-caption">Caramel Latte</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Cinnamon Roll.webp" alt="Cinnamon roll">
+                    <div class="gallery-caption">Cinnamon Roll</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Iced Matcha.webp" alt="Iced matcha">
+                    <div class="gallery-caption">Iced Matcha</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Our Space.webp" alt="Coffee shop interior">
+                    <div class="gallery-caption">Our Space</div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer id="site-footer">
         <p>&copy; 2026 BrewCrew Coffee Team. All rights reserved.</p>
         <p>Team members: Nurali Kalmakhanbet, Zhumak Zhalgas</p>
     </footer>
+
+</div>
 
 </body>
 </html>
