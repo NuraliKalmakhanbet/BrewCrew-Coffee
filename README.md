@@ -1,7 +1,6 @@
 # BrewCrew Coffee
 
-A clean, multi-page website for a coffee shop concept built with pure HTML5 and custom CSS3. Developed as **Assignment #1** for the **Web Technologies 1** course at Astana IT University.
-
+A clean, multi-page website for a coffee shop concept built with pure HTML5 and custom CSS3.
 ---
 
 ## Authors
