@@ -19,7 +19,6 @@ A clean, multi-page website for a coffee shop concept built with pure HTML5 and 
 
 ## Project Structure
 
-```text
 ├── css/
 │   └── style.css
 ├── images/
@@ -27,7 +26,18 @@ A clean, multi-page website for a coffee shop concept built with pure HTML5 and 
 │   ├── nurali.jpg
 │   ├── zhalgas.jpg
 │   ├── menu-hero.jpg
-│   └── contact-hero.jpg
+│   ├── contact-hero.jpg
+│   ├── Cappuccino.webp
+│   ├── Caramel Latte.webp
+│   ├── Caramel Oat Milk Latte.webp
+│   ├── Cheesecake.webp
+│   ├── Cinnamon Roll.webp
+│   ├── Croissant.webp
+│   ├── espresso Shot.webp
+│   ├── Green Tea.webp
+│   ├── Honey Iced Matcha.webp
+│   ├── Iced Matcha.webp
+│   └── Our Space.webp
 ├── index.html
 ├── about.html
 ├── menu.html
