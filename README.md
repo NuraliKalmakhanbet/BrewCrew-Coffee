@@ -1,6 +1,6 @@
 # BrewCrew Coffee
 
-A clean, multi-page website for a coffee shop concept built with pure HTML5 and custom CSS3.
+A clean, multi-page website for a coffee shop.
 ---
 
 ## Authors
@@ -10,7 +10,6 @@ A clean, multi-page website for a coffee shop concept built with pure HTML5 and 
 ---
 
 ## Tech Stack & Features
-* **Pure HTML5 & CSS3:** Clean, semantic markup without any frameworks (Bootstrap/Tailwind) or JavaScript[cite: 1].
 * **Core Components:** Custom navigation menu, interactive contact form, price table, and profile cards[cite: 1].
 * **CSS Selectors:** Implements element, class, ID, and descendant selectors[cite: 1].
 * **Box Model & Layout:** Uses flexbox alignment, custom spacing, hover states, and styled UI components[cite: 1].
