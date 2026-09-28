@@ -16,6 +16,7 @@ A clean, multi-page website for a coffee shop.
 
 ## Project Structure
 
+```
 ├── css/
 │   └── style.css
 ├── images/
