@@ -19,6 +19,7 @@ A clean, multi-page website for a coffee shop concept built with pure HTML5 and 
 
 ## Project Structure
 
+```
 ├── css/
 │   └── style.css
 ├── images/
