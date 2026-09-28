@@ -55,6 +55,31 @@ a:hover {
 }
  
 /* ==========================================================================
+   1b. BOOTSTRAP THEME OVERRIDE (Assignment 3)
+   Makes Bootstrap's default blue "primary" match our brand color instead
+   ========================================================================== */
+:root {
+    --bs-primary: #c77d3b;
+    --bs-primary-rgb: 199, 125, 59;
+}
+
+/* ==========================================================================
+   1c. RESPONSIVE TYPOGRAPHY (Assignment 3, Task 1)
+   Mobile-first font sizes, scaled up for tablet, desktop keeps base size above
+   ========================================================================== */
+@media (max-width: 600px) {
+    h1 { font-size: 1.4rem; }
+    h2 { font-size: 1.1rem; }
+    p  { font-size: 0.9rem; }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    h1 { font-size: 1.7rem; }
+    h2 { font-size: 1.25rem; }
+    p  { font-size: 1rem; }
+}
+
+/* ==========================================================================
    2. CLASS SELECTORS
    ========================================================================== */
 .text-center {
@@ -75,7 +100,7 @@ a:hover {
     border: 1px solid #e3d9c9;
     border-radius: 10px;
     padding: 24px;
-    margin: 24px 5vw;
+    margin: 0 0 24px 0;
 }
  
 .hero {
@@ -87,11 +112,7 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 20px;
-    background-color: #ffffff;
-    border: 1px solid #e3d9c9;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 24px 5vw;
+    flex-wrap: wrap;
 }
  
 .profile-img {
@@ -125,13 +146,7 @@ a:hover {
     color: #f7f1e8;
     text-align: center;
     padding: 24px 16px;
-    margin-top: 40px;
-}
- 
-#contact-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
+    margin-top: 0px;
 }
  
 #menu-table {
@@ -141,27 +156,6 @@ a:hover {
 /* ==========================================================================
    4. DESCENDANT SELECTORS
    ========================================================================== */
-.nav-menu ul {
-    list-style: none;
-    display: flex;
-    gap: 24px;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-}
- 
-.nav-menu a {
-    color: #f7f1e8;
-    font-weight: bold;
-    padding: 8px 4px;
-}
- 
-.nav-menu a:hover {
-    color: #c77d3b;
-    text-decoration: none;
-    border-bottom: 2px solid #c77d3b;
-}
- 
 #menu-table th {
     background-color: #6f4e37;
     color: #ffffff;
@@ -182,50 +176,10 @@ a:hover {
     margin: 4px 0;
 }
  
-#contact-form label {
-    margin-top: 14px;
-    margin-bottom: 4px;
-    font-weight: bold;
-}
- 
-#contact-form input,
-#contact-form select,
-#contact-form textarea {
-    padding: 10px;
-    border: 1px solid #c9bba3;
-    border-radius: 6px;
-    font-family: inherit;
-    font-size: 1rem;
-    background-color: #fbf6ef;
-}
- 
-#contact-form input:focus,
-#contact-form select:focus,
-#contact-form textarea:focus {
-    outline: none;
-    border-color: #c77d3b;
-    background-color: #ffffff;
-}
- 
-#contact-form button {
-    margin-top: 20px;
-    padding: 12px 20px;
-    background-color: #c77d3b;
-    color: #ffffff;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    width: fit-content;
-}
- 
-#contact-form button:hover {
-    background-color: #6b7a52;
-}
- 
 /* ==========================================================================
-   5. FLEXBOX CARD ROW
+   5. FLEXBOX CARD ROW + MEDIA QUERIES (Assignment 2 Task 2 / Assignment 3 Task 2)
+   Pure CSS media queries only, no Bootstrap here on purpose:
+   desktop = 3 per row, tablet = 2 per row, mobile = stacked
    ========================================================================== */
 .card-row {
     display: flex;
@@ -239,10 +193,22 @@ a:hover {
     border: 1px solid #e3d9c9;
     border-radius: 10px;
     padding: 20px;
-    flex: 1 1 250px;
+    flex: 1 1 30%; /* Desktop: 3 cards per row */
     display: flex;
     flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (max-width: 900px) {
+    .feature-card {
+        flex: 1 1 45%; /* Tablet: 2 cards per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .feature-card {
+        flex: 1 1 100%; /* Mobile: stacked */
+    }
 }
  
 .feature-card:hover {
@@ -265,56 +231,21 @@ a:hover {
     flex-grow: 1;
 }
  
-.feature-card button {
-    margin-top: 12px;
-    padding: 10px 16px;
-    background-color: #c77d3b;
-    color: #ffffff;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    align-self: flex-start;
-}
- 
-.feature-card button:hover {
-    background-color: #6b7a52;
-}
- 
 /* ==========================================================================
-   6. GRID PAGE LAYOUT
+   6. PAGE LAYOUT (Assignment 3, Task 3: now Bootstrap grid instead of
+   CSS Grid - see container-fluid / row / col-lg-* in the HTML files)
    ========================================================================== */
-.page-grid {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-        "header header"
-        "sidebar main"
-        "footer footer";
-    min-height: 100vh;
-}
- 
-.page-grid > header {
-    grid-area: header;
-}
- 
-.page-grid > .sidebar {
-    grid-area: sidebar;
-}
- 
-.page-grid > main {
-    grid-area: main;
-}
- 
-.page-grid > footer {
-    grid-area: footer;
-}
- 
 .sidebar {
     background-color: #ffffff;
     border-right: 1px solid #e3d9c9;
     padding: 20px;
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #e3d9c9;
+    }
 }
  
 .sidebar h3 {
@@ -334,24 +265,8 @@ a:hover {
     margin-bottom: 8px;
 }
  
-@media (max-width: 700px) {
-    .page-grid {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "header"
-            "sidebar"
-            "main"
-            "footer";
-    }
- 
-    .sidebar {
-        border-right: none;
-        border-bottom: 1px solid #e3d9c9;
-    }
-}
- 
 /* ==========================================================================
-   7. IMAGE GALLERY GRID
+   7. IMAGE GALLERY GRID (Assignment 2, Task 4)
    ========================================================================== */
 .gallery {
     display: grid;
@@ -389,16 +304,32 @@ a:hover {
     text-align: center;
     font-weight: bold;
     padding: 10px 8px;
-    opacity: 0; 
+    opacity: 0; /* Скрыто по умолчанию */
     transition: opacity 0.3s ease;
 }
 
 .gallery-item:hover .gallery-caption {
-    opacity: 1;
+    opacity: 1; /* Показывается при наведении */
 }
 
 @media (max-width: 600px) {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.carousel-item img {
+    height: 450px;
+    object-fit: cover;
+}
+
+@media (max-width: 600px) {
+    .carousel-item img {
+        height: 250px;
     }
 }

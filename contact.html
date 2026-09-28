@@ -4,25 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrewCrew Coffee - Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="page-grid">
-
     <header id="main-header">
-        <div class="logo">BrewCrew</div>
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#3b2a20;">
+            <div class="container-fluid">
+                <a class="navbar-brand logo" href="index.html">BrewCrew</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <aside class="sidebar">
+<div class="container-fluid">
+    <div class="row">
+
+    <aside class="sidebar col-lg-3 col-12 p-3 p-lg-4">
         <h3>Working Hours</h3>
         <ul>
             <li>Mon - Fri: 08:00 - 20:00</li>
@@ -34,48 +43,60 @@
         </ul>
     </aside>
 
-    <main>
+    <main class="col-lg-9 col-12 p-3 p-lg-4">
         <h1>Get In Touch</h1>
         <img src="images/contact-hero.jpg" alt="Coffee cup with message icon">
 
-        <section class="card">
+        <section class="card mt-3 mt-lg-4 px-sm-2">
             <h2>Send Us a Message</h2>
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            <form id="contact-form" class="row g-3">
+                <div class="col-12">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                <div class="col-12">
+                    <label for="email" class="form-label">Email:</label>
+                    <div class="input-group">
+                        <span class="input-group-text">@</span>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+                    </div>
+                </div>
 
-                <label for="visit-time">Preferred Visit Time:</label>
-                <select id="visit-time" name="visit-time">
-                    <option value="morning">Morning (08:00 - 12:00)</option>
-                    <option value="afternoon">Afternoon (12:00 - 16:00)</option>
-                    <option value="evening">Evening (16:00 - 20:00)</option>
-                </select>
+                <div class="col-12 col-md-6">
+                    <label for="visit-time" class="form-label">Preferred Visit Time:</label>
+                    <select class="form-select" id="visit-time" name="visit-time">
+                        <option value="morning">Morning (08:00 - 12:00)</option>
+                        <option value="afternoon">Afternoon (12:00 - 16:00)</option>
+                        <option value="evening">Evening (16:00 - 20:00)</option>
+                    </select>
+                </div>
 
-                <label for="favorite-color">Pick Theme Color:</label>
-                <input type="color" id="favorite-color" name="favorite-color" value="#c77d3b">
+                <div class="col-12 col-md-6">
+                    <label for="favorite-color" class="form-label">Pick Theme Color:</label>
+                    <input type="color" class="form-control form-control-color" id="favorite-color" name="favorite-color" value="#c77d3b">
+                </div>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+                <div class="col-12">
+                    <label for="message" class="form-label">Message:</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+                </div>
 
-                <button type="submit">Submit Message</button>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Submit Message</button>
+                </div>
             </form>
         </section>
-
-        <section class="card">
-            <h2>Page Creator Information</h2>
-            <p>This page was designed and built by <strong>Zhumak Zhalgas</strong> as part of Assignment requirements.</p>
-        </section>
     </main>
+
+    </div>
+</div>
 
     <footer id="site-footer">
         <p>&copy; 2026 BrewCrew Coffee Team. All rights reserved.</p>
         <p>Team members: Nurali Kalmakhanbet, Zhumak Zhalgas</p>
     </footer>
 
-</div>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
