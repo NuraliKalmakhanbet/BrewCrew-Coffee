@@ -9,9 +9,9 @@ A clean, multi-page website for a coffee shop.
 
 ## Tech Stack & Features
 
-* **Core Components:** Custom navigation menu, interactive contact form, price table, and profile cards[cite: 1].
-* **CSS Selectors:** Implements element, class, ID, and descendant selectors[cite: 1].
-* **Box Model & Layout:** Uses flexbox alignment, custom spacing, hover states, and styled UI components[cite: 1].
+* **Core Components:** Custom navigation menu, interactive contact form, price table, and profile cards.
+* **CSS Selectors:** Implements element, class, ID, and descendant selectors.
+* **Box Model & Layout:** Uses flexbox alignment, custom spacing, hover states, and styled UI components.
 * **Responsive Design:** Integrates CSS media queries and Bootstrap framework for responsive layout and adaptive components.
 
 ## Project Structure
