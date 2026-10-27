@@ -16,6 +16,8 @@ A clean, multi-page website for a coffee shop.
 ## Project Structure
 
 ```text
+├── audio/
+│   └── click.mp3
 ├── css/
 │   └── style.css
 ├── js/
