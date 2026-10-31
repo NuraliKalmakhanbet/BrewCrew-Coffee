@@ -16,16 +16,10 @@ A clean, multi-page website for a coffee shop.
 ## Project Structure
 
 ```text
-├── audio/
-│   └── click.mp3
 ├── css/
 │   └── style.css
 ├── js/
-│   ├── accordion.js
-│   ├── popup.js
 │   ├── script.js
-│   ├── slider.js
-│   └── validation.js
 ├── images/
 │   ├── hero.jpg
 │   ├── nurali.jpg
