@@ -3,147 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrewCrew Coffee - Home</title>
+    <title>Home | BrewCrew Coffee</title>
+    <meta name="description" content="BrewCrew is a student-run coffee corner. Browse the menu, rate drinks and order online.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
+    <script>
+        (function () {
+            var theme = null;
+            try { theme = localStorage.getItem("theme"); } catch (e) { }
+            if (theme !== "dark" && theme !== "light") {
+                theme = "light";
+                if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                    theme = "dark";
+                }
+            }
+            document.documentElement.setAttribute("data-bs-theme", theme);
+        })();
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <header id="main-header">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand logo" href="index.html">BrewCrew</a>
+    <header>
+        <nav class="navbar navbar-expand-lg site-nav" data-bs-theme="dark" aria-label="Main navigation">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><span class="icon brand-icon" data-icon="coffee" aria-hidden="true"></span>BrewCrew</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     </ul>
-                    <ul class="navbar-nav ms-lg-3 align-items-lg-center">
-                        <li class="nav-item"><span class="nav-link">Cart: <span id="cart-count">0</span></span></li>
-                        <li class="nav-item"><button type="button" id="theme-btn" class="btn btn-outline-light btn-sm">Night mode</button></li>
+                    <ul class="navbar-nav align-items-lg-center gap-lg-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="cart.html"><span class="icon" data-icon="cart" aria-hidden="true"></span> Cart <span class="badge cart-badge" id="cart-count">0</span></a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center gap-2 py-2 py-lg-0" id="nav-auth">
+                            <a class="nav-link py-0" href="login.html">Log in</a>
+                            <a class="btn btn-sm btn-primary" href="signup.html">Sign up</a>
+                        </li>
+                        <li class="nav-item py-2 py-lg-0">
+                            <button type="button" id="theme-btn" class="theme-switch" role="switch" aria-checked="false" aria-label="Switch to dark mode"><span class="theme-track"><span class="theme-thumb"><span class="icon" data-icon="sun" aria-hidden="true"></span></span></span><span class="theme-label">Dark mode</span></button>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-<div class="container-fluid">
-    <div class="row">
-
-    <aside class="sidebar col-lg-3 col-12 p-3 p-lg-4">
-        <h3>Welcome</h3>
-        <ul>
-            <li>Fresh Roast Daily</li>
-            <li>Free Wi-Fi Area</li>
-            <li>Student Friendly</li>
-        </ul>
-        <h3>Time</h3>
-        <button type="button" id="time-btn" class="btn btn-outline-primary btn-sm">Show current time</button>
-        <p id="time-output"></p>
-        <h3>Quick Links</h3>
-        <ul>
-            <li><a href="menu.html">View Menu</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-    </aside>
-
-    <main class="col-lg-9 col-12 p-3 p-lg-4">
+    <main id="main">
         <section class="hero">
-            <h1>Good Coffee, Good Company</h1>
-            <p class="text-center">BrewCrew is a student-run coffee corner where every cup is brewed with precision and care. Stop by, enjoy a hot drink, and stay productive.</p>
-            <p id="greeting" class="text-center">Welcome!</p>
-            <form id="greeting-form" class="d-flex justify-content-center gap-2 mb-3">
-                <input type="text" id="user-name" class="form-control w-auto" placeholder="Your name">
-                <button type="submit" class="btn btn-primary">Say hello</button>
-            </form>
-            <img src="images/hero.jpg" alt="Photo of BrewCrew coffee shop interior">
-        </section>
-
-        <section class="card">
-            <h2>Why Choose BrewCrew?</h2>
-            <ul>
-                <li>Freshly roasted coffee beans delivered weekly</li>
-                <li>Comfortable study spaces with free high-speed Wi-Fi</li>
-                <li>Friendly student baristas who know your daily order</li>
-                <li>Freshly baked pastries prepared every morning</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2 class="text-center">Featured Drinks</h2>
-            <div class="card-row">
-                <div class="feature-card">
-                    <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/Caramel Oat Milk Latte.webp" alt="Caramel Oat Milk Latte">
-                    <h3>Caramel Oat Milk Latte</h3>
-                    <p>Smooth espresso with steamed oat milk and a hint of caramel syrup.</p>
-                    <button type="button" class="btn btn-outline-primary order-btn" data-name="Caramel Oat Milk Latte" data-price="1600">Order Now</button>
-                </div>
-                <div class="feature-card">
-                    <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/Cinnamon Roll.webp" alt="Cinnamon Roll">
-                    <h3>Cinnamon Roll</h3>
-                    <p>Warm, freshly baked cinnamon roll topped with sweet glaze.</p>
-                    <button type="button" class="btn btn-outline-primary order-btn" data-name="Cinnamon Roll" data-price="900">Order Now</button>
-                </div>
-                <div class="feature-card">
-                    <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/Honey Iced Matcha.webp" alt="Honey Iced Green Matcha">
-                    <h3>Honey Iced Matcha</h3>
-                    <p>Refreshing iced matcha lightly sweetened with natural honey.</p>
-                    <button type="button" class="btn btn-outline-primary order-btn" data-name="Honey Iced Matcha" data-price="1500">Order Now</button>
+            <div class="container">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-lg-6">
+                        <p class="eyebrow">Student-run coffee corner</p>
+                        <h1>Good coffee, good company</h1>
+                        <p class="lead">BrewCrew is a coffee corner where every cup is brewed with care. Build your order on the website, pick it up at the counter and stay productive.</p>
+                        <p id="greeting" class="greeting"></p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a class="btn btn-primary btn-lg" href="menu.html">Browse the menu</a>
+                            <a class="btn btn-outline-primary btn-lg" id="hero-account-btn" href="signup.html">Create an account</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="hero-img" src="images/hero.jpg" width="678" height="452" alt="Inside the BrewCrew coffee shop: the counter, a pastry display and seating">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="stats-section">
-            <div class="stat-box">
-                <span class="counter-number" data-target="1500">0</span><span class="stat-plus">+</span>
-                <p>Happy Students</p>
-            </div>
-            <div class="stat-box">
-                <span class="counter-number" data-target="25">0</span><span class="stat-plus">+</span>
-                <p>Drinks and Desserts</p>
-            </div>
-            <div class="stat-box">
-                <span class="counter-number" data-target="12000">0</span><span class="stat-plus">+</span>
-                <p>Cups Served</p>
-            </div>
-            <div class="stat-box">
-                <span class="counter-number" data-target="3">0</span>
-                <p>Years of Brewing</p>
+        <section class="container section">
+            <h2 class="section-title">Why choose BrewCrew?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card feature h-100">
+                        <span class="icon icon-lg feature-icon" data-icon="coffee" aria-hidden="true"></span>
+                        <h3 class="h5">Fresh every day</h3>
+                        <p class="mb-0">Freshly roasted coffee beans are delivered every week and our pastries are baked each morning.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature h-100">
+                        <span class="icon icon-lg feature-icon" data-icon="book" aria-hidden="true"></span>
+                        <h3 class="h5">Made for studying</h3>
+                        <p class="mb-0">Comfortable study spaces with free high-speed Wi-Fi and friendly student baristas who know your daily order.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature h-100">
+                        <span class="icon icon-lg feature-icon" data-icon="tag" aria-hidden="true"></span>
+                        <h3 class="h5">Student discount</h3>
+                        <p class="mb-0">Use the promo code <strong>STUDENT15</strong> in your cart and get 15% off your whole order.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="card mt-3 mt-lg-4 px-sm-2">
-            <h2>Student Promo Code</h2>
-            <p>Show this code at the counter and get 15% off:</p>
-            <div class="copy-box">
-                <span class="copy-text">STUDENT15</span>
-                <button type="button" class="copy-btn" data-copy="STUDENT15" aria-label="Copy promo code">&#128203;</button>
+        <section class="container section" id="weather-section">
+            <h2 class="section-title">Drink of the day</h2>
+            <div class="card weather-card p-4">
+                <div class="row align-items-center g-4">
+                    <div class="col-md-4">
+                        <h3 class="h5 mb-2"><span class="icon" data-icon="cloud" aria-hidden="true"></span> Right now in Astana</h3>
+                        <p id="weather-status" class="mb-0 text-body-secondary" role="status">Loading the weather...</p>
+                    </div>
+                    <div class="col-md-3 text-md-center">
+                        <div id="weather-temp" class="weather-temp" aria-live="polite">--</div>
+                        <div id="weather-desc" class="text-body-secondary"></div>
+                    </div>
+                    <div class="col-md-5">
+                        <p id="weather-tip" class="mb-2">We pick a drink for the weather outside.</p>
+                        <div id="weather-links" class="d-flex flex-wrap gap-2"></div>
+                        <button type="button" id="weather-retry-btn" class="btn btn-primary btn-sm" hidden>Try again</button>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="card mt-3 mt-lg-4 px-sm-2">
-            <h2>Our Story</h2>
-            <p>BrewCrew started as a collaborative university project and evolved into a favorite spot for students to study and relax. We focus on creating a warm environment alongside quality beverages.</p>
+        <section class="container section">
+            <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3">
+                <h2 class="section-title mb-0">Featured drinks</h2>
+                <a href="menu.html">See the full menu &rarr;</a>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="featured-grid"></div>
+        </section>
+
+        <section class="container section">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card h-100 p-4">
+                        <h2 class="h4"><span class="icon" data-icon="tag" aria-hidden="true"></span> Student promo code</h2>
+                        <p>Add your drinks to the cart, enter this code and get 15% off.</p>
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                            <span class="code-box">STUDENT15</span>
+                            <button type="button" class="btn btn-outline-primary btn-sm copy-btn" data-copy="STUDENT15">Copy code</button>
+                            <a class="btn btn-primary btn-sm" href="cart.html">Go to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 p-4">
+                        <h2 class="h4"><span class="icon" data-icon="clock" aria-hidden="true"></span> Opening hours</h2>
+                        <ul class="list-unstyled mb-3">
+                            <li class="d-flex justify-content-between"><span>Monday - Friday</span><strong>08:00 - 20:00</strong></li>
+                            <li class="d-flex justify-content-between"><span>Saturday - Sunday</span><strong>09:00 - 18:00</strong></li>
+                        </ul>
+                        <p class="mb-0">Find us at Astana IT University Campus.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    </div>
-</div>
-
-    <footer id="site-footer">
-        <p>&copy; 2026 BrewCrew Coffee Team. All rights reserved.</p>
-        <p>Team members: Nurali Kalmakhanbet, Zhumak Zhalgas</p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row gy-3">
+                <div class="col-md-6">
+                    <p class="footer-brand">BrewCrew Coffee</p>
+                    <p class="mb-0">A student-run coffee corner at Astana IT University Campus.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-1"><a href="menu.html">Menu</a> &middot; <a href="about.html">About</a> &middot; <a href="contact.html">Contact</a></p>
+                    <p class="mb-0">&copy; 2026 BrewCrew Coffee Team: Nurali Kalmakhanbet, Zhumak Zhalgas, Batyrkhan Kanapiya</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
-<div id="toast"></div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/menu-data.js"></script>
+    <script src="js/shop.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/weather.js"></script>
 </body>
 </html>

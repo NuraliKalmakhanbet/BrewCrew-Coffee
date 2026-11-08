@@ -3,123 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrewCrew Coffee - Contact</title>
+    <title>Contact | BrewCrew Coffee</title>
+    <meta name="description" content="Contact the BrewCrew team: email, address, opening hours and a message form.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
+    <script>
+        (function () {
+            var theme = null;
+            try { theme = localStorage.getItem("theme"); } catch (e) { }
+            if (theme !== "dark" && theme !== "light") {
+                theme = "light";
+                if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                    theme = "dark";
+                }
+            }
+            document.documentElement.setAttribute("data-bs-theme", theme);
+        })();
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <header id="main-header">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand logo" href="index.html">BrewCrew</a>
+    <header>
+        <nav class="navbar navbar-expand-lg site-nav" data-bs-theme="dark" aria-label="Main navigation">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><span class="icon brand-icon" data-icon="coffee" aria-hidden="true"></span>BrewCrew</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                         <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
                     </ul>
-                    <ul class="navbar-nav ms-lg-3 align-items-lg-center">
-                        <li class="nav-item"><span class="nav-link">Cart: <span id="cart-count">0</span></span></li>
-                        <li class="nav-item"><button type="button" id="theme-btn" class="btn btn-outline-light btn-sm">Night mode</button></li>
+                    <ul class="navbar-nav align-items-lg-center gap-lg-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="cart.html"><span class="icon" data-icon="cart" aria-hidden="true"></span> Cart <span class="badge cart-badge" id="cart-count">0</span></a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center gap-2 py-2 py-lg-0" id="nav-auth">
+                            <a class="nav-link py-0" href="login.html">Log in</a>
+                            <a class="btn btn-sm btn-primary" href="signup.html">Sign up</a>
+                        </li>
+                        <li class="nav-item py-2 py-lg-0">
+                            <button type="button" id="theme-btn" class="theme-switch" role="switch" aria-checked="false" aria-label="Switch to dark mode"><span class="theme-track"><span class="theme-thumb"><span class="icon" data-icon="sun" aria-hidden="true"></span></span></span><span class="theme-label">Dark mode</span></button>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-<div class="container-fluid">
-    <div class="row">
-
-    <aside class="sidebar col-lg-3 col-12 p-3 p-lg-4">
-        <h3>Working Hours</h3>
-        <ul>
-            <li>Mon - Fri: 08:00 - 20:00</li>
-            <li>Sat - Sun: 09:00 - 18:00</li>
-        </ul>
-        <h3>Location</h3>
-        <ul>
-            <li>Astana IT University Campus</li>
-        </ul>
-    </aside>
-
-    <main class="col-lg-9 col-12 p-3 p-lg-4">
-        <h1>Get In Touch</h1>
-        <img src="images/contact-hero.jpg" alt="Coffee cup with message icon">
-
-        <section class="card mt-3 mt-lg-4 px-sm-2">
-            <h2>Contact Details</h2>
-            <div class="copy-box">
-                <span class="copy-text">hello@brewcrew.kz</span>
-                <button type="button" class="copy-btn" data-copy="hello@brewcrew.kz" aria-label="Copy email">&#128203;</button>
-            </div>
-            <div class="copy-box">
-                <span class="copy-text">Astana IT University Campus</span>
-                <button type="button" class="copy-btn" data-copy="Astana IT University Campus" aria-label="Copy address">&#128203;</button>
+    <main id="main">
+        <section class="page-header">
+            <div class="container">
+                <h1>Get in touch</h1>
+                <p class="lead mb-0">Questions, feedback or a table for your study group? Send us a message.</p>
             </div>
         </section>
 
-        <section class="card mt-3 mt-lg-4 px-sm-2">
-            <h2>Send Us a Message</h2>
-            <form id="contact-form" class="row g-3">
-                <div class="col-12">
-                    <label for="name" class="form-label">Name:</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
-                </div>
-
-                <div class="col-12">
-                    <label for="email" class="form-label">Email:</label>
-                    <div class="input-group">
-                        <span class="input-group-text">@</span>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+        <section class="container section">
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <div class="card p-4 mb-4">
+                        <h2 class="h4">Contact details</h2>
+                        <p class="mb-1 small text-body-secondary"><span class="icon" data-icon="mail" aria-hidden="true"></span> Email</p>
+                        <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                            <span class="code-box">hello@brewcrew.kz</span>
+                            <button type="button" class="btn btn-outline-primary btn-sm copy-btn" data-copy="hello@brewcrew.kz">Copy</button>
+                        </div>
+                        <p class="mb-1 small text-body-secondary"><span class="icon" data-icon="pin" aria-hidden="true"></span> Address</p>
+                        <div class="d-flex flex-wrap align-items-center gap-2">
+                            <span class="code-box">Astana IT University Campus</span>
+                            <button type="button" class="btn btn-outline-primary btn-sm copy-btn" data-copy="Astana IT University Campus">Copy</button>
+                        </div>
+                    </div>
+                    <div class="card p-4">
+                        <h2 class="h4"><span class="icon" data-icon="clock" aria-hidden="true"></span> Opening hours</h2>
+                        <ul class="list-unstyled mb-0">
+                            <li class="d-flex justify-content-between"><span>Monday - Friday</span><strong>08:00 - 20:00</strong></li>
+                            <li class="d-flex justify-content-between"><span>Saturday - Sunday</span><strong>09:00 - 18:00</strong></li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6">
-                    <label for="visit-time" class="form-label">Preferred Visit Time:</label>
-                    <select class="form-select" id="visit-time" name="visit-time">
-                        <option value="morning">Morning (08:00 - 12:00)</option>
-                        <option value="afternoon">Afternoon (12:00 - 16:00)</option>
-                        <option value="evening">Evening (16:00 - 20:00)</option>
-                    </select>
+                <div class="col-lg-7">
+                    <div class="card p-4">
+                        <h2 class="h4">Send us a message</h2>
+                        <form id="contact-form" novalidate>
+                            <div class="mb-3">
+                                <label for="contact-name" class="form-label">Full name</label>
+                                <input type="text" id="contact-name" class="form-control" autocomplete="name" placeholder="Enter your full name">
+                                <div class="invalid-feedback" id="contact-name-error"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="contact-email" class="form-label">Email</label>
+                                    <input type="text" inputmode="email" id="contact-email" class="form-control" autocomplete="email" placeholder="name@example.com">
+                                    <div class="invalid-feedback" id="contact-email-error"></div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="contact-phone" class="form-label">Phone</label>
+                                    <input type="text" inputmode="tel" id="contact-phone" class="form-control" autocomplete="tel" placeholder="+7 777 123 45 67">
+                                    <div class="invalid-feedback" id="contact-phone-error"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-message" class="form-label">Message</label>
+                                <textarea id="contact-message" class="form-control" rows="5" placeholder="Type your message here..."></textarea>
+                                <div class="invalid-feedback" id="contact-message-error"></div>
+                                <div class="form-text" id="char-count">0 / 300</div>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <button type="submit" class="btn btn-primary">Send message</button>
+                                <button type="button" id="contact-reset" class="btn btn-outline-secondary">Reset</button>
+                            </div>
+                            <div id="contact-success" class="alert alert-success mt-3 mb-0" role="status" hidden></div>
+                        </form>
+                    </div>
                 </div>
-
-                <div class="col-12 col-md-6">
-                    <label for="favorite-color" class="form-label">Pick Theme Color:</label>
-                    <input type="color" class="form-control form-control-color" id="favorite-color" name="favorite-color" value="#c77d3b">
-                </div>
-
-                <div class="col-12">
-                    <label for="message" class="form-label">Message:</label>
-                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
-                    <span id="char-count">0 / 300</span>
-                </div>
-
-                <div class="col-12">
-                    <button type="submit" id="submit-btn" class="btn btn-primary">Submit Message</button>
-                    <button type="button" id="reset-btn" class="btn btn-outline-secondary">Reset</button>
-                    <div id="form-result" class="form-result"></div>
-                </div>
-            </form>
+            </div>
         </section>
     </main>
 
-    </div>
-</div>
-
-    <footer id="site-footer">
-        <p>&copy; 2026 BrewCrew Coffee Team. All rights reserved.</p>
-        <p>Team members: Nurali Kalmakhanbet, Zhumak Zhalgas</p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row gy-3">
+                <div class="col-md-6">
+                    <p class="footer-brand">BrewCrew Coffee</p>
+                    <p class="mb-0">A student-run coffee corner at Astana IT University Campus.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-1"><a href="menu.html">Menu</a> &middot; <a href="about.html">About</a> &middot; <a href="contact.html">Contact</a></p>
+                    <p class="mb-0">&copy; 2026 BrewCrew Coffee Team: Nurali Kalmakhanbet, Zhumak Zhalgas, Batyrkhan Kanapiya</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
-<div id="toast"></div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
