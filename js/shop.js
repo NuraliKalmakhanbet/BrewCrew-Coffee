@@ -97,7 +97,7 @@ function createItemCard(item) {
         '</div>' +
         '<div class="mt-auto d-flex justify-content-between align-items-center gap-2">' +
         '<strong class="price item-price"></strong>' +
-        '<button type="button" class="btn btn-primary btn-sm add-btn">' + iconSvg("cart") + ' Add to cart</button>' +
+        '<button type="button" class="btn btn-primary btn-sm add-btn"><span class="icon" aria-hidden="true">' + iconSvg("cart") + '</span> Add to cart</button>' +
         '</div>' +
         '</div>' +
         '</article>';
